@@ -2,7 +2,17 @@ export default [
     {
         path: '/',
         name: 'index',
-        component: () => import('@/view/index')
+        component: () => import('@/view/base/home'),
+        children:[
+            {
+                path: '/',
+                name:'index',
+                meta: {
+                    title: '首页'
+                },
+                component: () => import('@/view/index')
+            },
+        ]
     },
     {
         path: '/login.html',
